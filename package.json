@@ -2,6 +2,8 @@
   "name": "pi-photogate-plotly",
   "version": "0.0.1",
   "dependencies": {
-    "plotly": "1.0.x"
+    "plotly": "1.0.x",
+    "blessed": "0.1.x",
+    "blessed-contrib": "4.5.x"
   }
 }
