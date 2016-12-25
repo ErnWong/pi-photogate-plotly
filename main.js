@@ -97,31 +97,11 @@ tsvLineFeeds.on('line', function (line) {
 });
 
 
-/*
-fs.createReadStream('/dev/tty').on('data', function(chunk) {
-  log('tty:', chunk, `(len = ${chunk.length})`);
-  for (let c of chunk) {
-    switch (c) {
-      case 'q':
-        log('Quiting...');
-        if (stream[0]) stream[0].close();
-        if (stream[1]) stream[1].close();
-        if (stream[2]) stream[2].close();
-        process.exit();
-        break;
-      case 's':
-        log('Saving datapoint to scatter plot');
-        let data = JSON.stringify({x: g, y: y});
-        if (stream[3]) stream[3].write(data + '\n');
-        break;
-    }
-  }
-});
-*/
 screen.key(['escape', 'q', 'C-c'], function(ch, key) {
   log('Quiting...');
   process.exit(0);
 });
+
 screen.key(['s', 'C-s'], function(ch, key) {
   log('Saving datapoint to scatter plot');
   let data = JSON.stringify({x: g, y: y});
