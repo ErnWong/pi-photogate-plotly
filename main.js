@@ -77,6 +77,7 @@ let tsvLineFeeds = readline.createInterface({
 let g = 0;
 let y = 0;
 tsvLineFeeds.on('line', function (line) {
+  while (line && isNaN(line.charAt(0))) line = line.slice(1);
   [g, y] = line.split('\t');
   dataLog.log(line);
   let d = new Date();
